@@ -2,7 +2,7 @@ input: .
 output: .retype
 url: wiki.danbyte.net
 branding:
-  logo: 
+  title: DanByte
   label: WIKI
 links:
 - text: Tilbage til DanByte
@@ -15,3 +15,4 @@ edit:
   base: ""                    # Optional base path to a directory within repo
   branch: "main"                  # Point to a custom branch within the repo
   label: "Rediger side"     # A custom label for the generated link
+
