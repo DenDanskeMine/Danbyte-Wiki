@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749552994063">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749566471661">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Minecraft DNS</title>
     <meta name="title" content="Minecraft DNS">
+    <meta name="description" content="Har du dit eget domæne som du ønsker at koble til din Minecraft server?">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://wiki.danbyte.net/minecraftdns/">
@@ -19,19 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wiki.danbyte.net/minecraftdns/">
     <meta property="og:title" content="Minecraft DNS">
+    <meta property="og:description" content="Har du dit eget domæne som du ønsker at koble til din Minecraft server?">
+    <meta property="og:image" content="https://wiki.danbyte.net/img/dnssrv.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://wiki.danbyte.net/minecraftdns/">
     <meta property="twitter:title" content="Minecraft DNS">
+    <meta property="twitter:description" content="Har du dit eget domæne som du ønsker at koble til din Minecraft server?">
+    <meta property="twitter:image" content="https://wiki.danbyte.net/img/dnssrv.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.749552994063" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.749566471661" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.749552994063" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.749566471661" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.749552994063" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.749566471661" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,6 +186,55 @@
     <div><a href="../categories/minecraft/">Minecraft</a></div>
 </div>
 
+<p>Har du dit eget domæne som du ønsker at koble til din Minecraft server?</p>
+<p>Så er det i hvert fald her du kan lære hvordan du gør.</p>
+<doc-anchor-target id="step-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1">#</doc-anchor-trigger>
+        <span>Step 1</span>
+    </h2>
+</doc-anchor-target>
+<p>Find din IP til din server.</p>
+<p><strong>G1:</strong> 194.15.36.197</p>
+<p><strong>G2:</strong> 94.130.141.38</p>
+<p><strong>G3:</strong> ikke aktiv endnu</p>
+<doc-anchor-target id="step-2">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2">#</doc-anchor-trigger>
+        <span>Step 2</span>
+    </h2>
+</doc-anchor-target>
+<p>Logind på din Dns udbyders hjemmeside, og find din DNS Manager.</p>
+<p>Nu skal du oprette en ny DNS record, og vælge <code v-pre>A</code> som type.</p>
+<p>I feltet <code v-pre>Name</code> skal du skrive det subdomæne du gerne vil bruge. (f.eks. <code v-pre>Play</code>)<br>
+Hvis du ikke vil bruge et subdomæne, så skal du bare skrive <code v-pre>@</code> i stedet.</p>
+<p>I feltet <code v-pre>Value</code> skal du skrive IP&#x27;en til din server.
+Dette er den IP du fandt i step 1.</p>
+<doc-anchor-target id="step-3">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3">#</doc-anchor-trigger>
+        <span>Step 3</span>
+    </h2>
+</doc-anchor-target>
+<p>Nu skal du lave en SRV record. Som pejer på den A record du lige har lavet.
+I feltet <code v-pre>Name</code> skal du skrive dit <code v-pre>A</code> navn fx: <code v-pre>Play</code><br>
+I feltet <code v-pre>Service</code> skal du skrive <code v-pre>_minecraft</code><br>
+i feltet <code v-pre>Protocol</code> skal du vælge <code v-pre>tcp</code><br>
+I feltet <code v-pre>Priority</code> skal du skrive <code v-pre>1</code><br>
+I feltet <code v-pre>Weight</code> skal du skrive <code v-pre>5</code><br>
+I feltet <code v-pre>Port</code> skal du skrive din port fx <code v-pre>25566</code><br>
+I feltet <code v-pre>Target</code> skal du skrive domænet på den server hvor din A record er på.<br></p>
+<p>Vi har disse domæner:</p>
+<p><strong>G1:</strong> <code v-pre>g1.danbyte.net</code></p>
+<p><strong>G2:</strong> <code v-pre>g2.danbyte.net</code></p>
+<p><strong>G3:</strong> <code v-pre>g3.danbyte.net</code></p>
+<p>Du kan i principet også bare skrive din A record her.
+Jeg vil dog anbefale at du bruger et af vores domæner, så du nemt kan se at det er vores server du bruger.
+<figure class="content-center">
+    <img src="../img/dnssrv.png" alt="DNS">
+    <figcaption class="caption">DNS</figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
