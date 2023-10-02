@@ -1,5 +1,5 @@
 ---
-icon: home
+icon: globe
 label: Rust Map Størrelse
 authors:
   - name: Christian Rose
