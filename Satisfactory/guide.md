@@ -1,10 +1,10 @@
 ## Satisfactoery Guide
 
-### Port Allokatoin
+### Port allokering
 
 For at kunne spille på din server, skal du først `allokere to porte` til din server.
 
-Dette gør du ved at gå ind på dit [panel](https://panel.danbyte.net) og klikker på din server.
+Dette gør du ved at gå ind på dit [panel](https://panel.danbyte.net) og vælger din SatisFactory Server.
 
 Herefter klikker du på `Network` og så `CREATE ALLOCATION`.<br>
 
